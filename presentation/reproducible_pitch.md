@@ -1,3 +1,9 @@
+<style>
+.small-code pre code {
+  font-size: 1em;
+}
+</style>
+
 Developing Data Products Final Project - US Drone Strikes
 ========================================================
 author: David Waterman
@@ -29,5 +35,27 @@ Example of App Running
 
 Source Code
 ========================================================
-The source code for the web application, this presentation, and all associated files is available at github.com,
-http://github.com/drwaterman/USDroneStrikes
+class:small-code
+The source code for the project and all associated files is available at  http://github.com/drwaterman/USDroneStrikes
+
+Sample data processing code:
+<font size="8">
+
+```r
+library(googlesheets)
+pak_url <- "https://docs.google.com/spreadsheets/d/1NAfjFonM-Tn7fziqiv33HlGt09wgLZDSCP-BQaux51w/edit?usp=sharing"
+pak_sheet <- gs_url(pak_url)
+pak_data <- gs_read(pak_sheet, ws="Drone strikes data")
+sample_data <- pak_data[1:3,c(2,5:6)]
+sample_data
+```
+
+```
+# A tibble: 3 × 3
+        Date `Minimum total people killed` `Maximum total people killed`
+       <chr>                         <int>                         <int>
+1 17/06/2004                             6                             8
+2 08/05/2005                             2                             2
+3 05/11/2005                             8                             8
+```
+</font>
