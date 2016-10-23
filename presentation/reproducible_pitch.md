@@ -30,4 +30,4 @@ Example of App Running
 Source Code
 ========================================================
 The source code for the web application, this presentation, and all associated files is available at github.com,
-http://github.com/drwaterman/
+http://github.com/drwaterman/USDroneStrikes
